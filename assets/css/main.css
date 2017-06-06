@@ -1,5 +1,20 @@
+/*MOBILE FIRST*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.root {
+    background-color: #660000;
+    border: 1px solid #000;
+    padding: 14px 0;
+}
+h1 {
+    color: #fff;
+    text-align: center;
+}
+@media (min-width: 700px) {
+    .root {
+        background-color: rgb(170, 161, 51);
+    }
 }
