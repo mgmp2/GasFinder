@@ -1,0 +1,3 @@
+$(_ => {
+    alert('Hello world');
+})
