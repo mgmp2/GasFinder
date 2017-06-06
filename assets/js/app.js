@@ -6,15 +6,26 @@ const render = (root) => {
 
     wrapper.append(Header());
     wrapper.append(Search());
+    // wrapper.append(Search());
+    // wrapper.append(Search());
     root.append(wrapper);
 
 }
 
 const state = {
-    todos: []
-}
+  stations: null,
+  selectedStation: null
+};
 
 $(_ => {
-    const root = $(".root");
-    render(root);
+        getJSON('stations.json', (err, json) => {
+
+       if (err) { return alert(err.message);}
+       state.stations = json;
+
+        const root = $('.root');
+        render(root);
+
+        });
+
 })

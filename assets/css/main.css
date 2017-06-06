@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.root {
+header {
     background-color: #660000;
     border: 1px solid #000;
     padding: 14px 0;
@@ -12,6 +12,27 @@
 h1 {
     color: #fff;
     text-align: center;
+}
+
+/*SEARCH */
+#search {
+    padding: 14px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+#search [type="text"] {
+    width: 100%;
+    padding: 14px;
+    padding-left: 35px;
+    border: 1px solid #000;
+    border-radius: 7px;
+}
+#search i {
+    position: absolute;
+    left:23px;
+    top: 32%;
+    font-size: 21px
 }
 @media (min-width: 700px) {
     .root {
