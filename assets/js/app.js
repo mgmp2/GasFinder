@@ -7,7 +7,7 @@ const render = (root) => {
     wrapper.append(Header());
     wrapper.append(Search());
     // wrapper.append(Search());
-    // wrapper.append(Search());
+    // wrapper.append(stationDetails());
     root.append(wrapper);
 
 }
