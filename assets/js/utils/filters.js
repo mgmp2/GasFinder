@@ -1,10 +1,11 @@
 'use strict';
-
+// Mi query se refiere al distrito que necesito
 const filterByDistrict = (stations,query) => {
 	if(stations){
-	       stations.filter( x => {
-			            if(x.district.toLowerCase().indexOf(query)!= -1){
+	      return  stations.filter( x => {
+			            if(x.district.toLowerCase().indexOf(query) != -1){
                             return x;
 			} 	});
+
 	}
 }

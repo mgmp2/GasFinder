@@ -12,7 +12,7 @@ const Search = () => {
 
     input.on('keyup', (e) => {
         if (input.val()) {
-
+            const getValue = filterByDistrict(state.stations, input.val());
         }
     })
     return search;
