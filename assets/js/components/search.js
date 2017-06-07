@@ -1,10 +1,11 @@
 'use strict';
+
+// SHOW MY MAP WITH ROUTE
 let map;
 
 const showMap = (latitudSelect, longSelect) => {
    map = new GMaps({
     div: '#map',
-    zoom: 20,
     lat: latitudSelect,
     lng: longSelect
   })
@@ -12,14 +13,12 @@ const showMap = (latitudSelect, longSelect) => {
   GMaps.geolocate({
   success: function(position) {
     map.setCenter(position.coords.latitude, position.coords.longitude);
-    map.setZoom(13);
+    map.setZoom(12);
       map.addMarker({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
         title: "Lima-Miraflores ",
-        click: function(e) {
-          alert('You clicked in this marker');
-        }
+
       });
       map.drawRoute({
         origin: [position.coords.latitude, position.coords.longitude],
@@ -29,10 +28,8 @@ const showMap = (latitudSelect, longSelect) => {
       map.addMarker({
         lat: latitudSelect,
         lng: longSelect,
-        title: latitudSelect ,
-        click: function(e) {
-          alert('stations');
-        }
+        title: "Llegada" ,
+
       });
     },
   });
@@ -42,29 +39,27 @@ const showMap = (latitudSelect, longSelect) => {
 
 
 
-
-
 const reRender = (getValue, result) => {
     result.empty();
     getValue.forEach( getStation => {
-        result.append(SearchItem(getStation, _ =>{reRender(getValue, result); }));
+        result.append(SearchItem(getStation, _ => {reRender(getValue, result); }));
     })
 };
 
-const SearchItem = (data, update)  => {
+const SearchItem = (obtainResult, update)  => {
     const item = $('<section class="item"></section>');
-    const nam = $('<h3>'+data.name+'</h3>');
-    const adrss= $('<h6>'+data.address+'</h6>');
-    const district = $('<h6>'+data.district+'</h6>');
+    const nam = $('<h3>'+obtainResult.name+'</h3>');
+    const adrss= $('<h6>'+obtainResult.address+'</h6>');
+    const district = $('<h6>'+obtainResult.district+'</h6>');
     const icon = $('<i class="fa fa-map" aria-hidden="true"></i>');
 
     item.append(nam);
     item.append(adrss);
-    item.append(data.district);
+    item.append(obtainResult.district);
     item.append(icon);
 
     icon.on('click', (e) => {
-        showMap(data.lat, data.long);
+        showMap(obtainResult.lat, obtainResult.long);
     })
     return item;
 }
