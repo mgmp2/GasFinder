@@ -3,12 +3,24 @@
 const render = (root) => {
     root.empty();
     const wrapper = $('<div class="wrapper"></div>');
-    const head = Header();
-    head.append(Search());
-    wrapper.append(head);
-    root.append(wrapper);
+    //Append de componentes
+    wrapper.append(Header( _ => {
+        render(root);
+    }));
 
-}
+    if(state.selectedStation == null ) {
+        wrapper.append(Search( _ => {
+            render(root);
+        }));
+    }
+    else {
+        wrapper.append(detailsStation( _ => {
+            render(root);
+    }));
+    }
+    // wrapper.append(head);
+    root.append(wrapper);
+};
 
 const state = {
   stations: null,
