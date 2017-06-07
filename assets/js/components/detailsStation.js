@@ -4,7 +4,7 @@ const detailsStation = (update) => {
     const box = $('<div class="container"></div>');
     const mapa = $('<div id="map"></div>');
     const detail = $('<section class="detail"></section>');
-    const name = $('<h1>'+state.selectedStation.name+"</h1>");
+    const name = $('<h2>'+state.selectedStation.name+"</h2>");
     const producto = $('<div class="product"></div>');
 
     state.selectedStation.products.forEach( (e,i) => {

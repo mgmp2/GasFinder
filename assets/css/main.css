@@ -12,7 +12,9 @@ h1 {
     color: #fff;
     text-align: center;
 }
-
+.wrapper {
+    border: 1px solid #000;
+}
 /*SEARCH */
 
 #search .box-input {
@@ -58,17 +60,25 @@ h1 {
     width: 100%;
     height: 50vh;
 }
+.detail {
+    height: 210px;
+    padding: 14px;
+}
+.detail .product {
 
+    margin: 14px;
+    padding: 7px;
+}
 .product span {
+    border-radius: 4px;
     width: 21px;
     height: 21px;
-    background: #fff;
+    border: 1px solid #000;
     margin: 14px;
     padding: 7px;
 }
 @media (min-width: 700px) {
     .root {
-        background-color: rgb(170, 161, 51);
         width: 80%;
         margin: 0 auto;
     }
