@@ -4,9 +4,12 @@ const SearchItem = (data, update)  => {
     const nam = $('<h3>'+data.name+'</h3>');
     const adrss= $('<h6>'+data.address+'</h6>');
     const district = $('<h6>'+data.district+'</h6>');
+    const icon = $('<i class="fa fa-map" aria-hidden="true"></i>');
+
     item.append(nam);
     item.append(adrss);
     item.append(data.district);
+    item.append(icon);
     return item;
 }
 
