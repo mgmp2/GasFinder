@@ -3,10 +3,9 @@
 const render = (root) => {
     root.empty();
     const wrapper = $('<div class="wrapper"></div>');
-
-    wrapper.append(Header());
-    wrapper.append(Search());
-    // wrapper.append(stationDetails());
+    const head = Header();
+    head.append(Search());
+    wrapper.append(head);
     root.append(wrapper);
 
 }
