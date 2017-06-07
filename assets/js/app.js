@@ -18,7 +18,6 @@ const render = (root) => {
             render(root);
     }));
     }
-    // wrapper.append(head);
     root.append(wrapper);
 };
 
