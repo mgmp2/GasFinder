@@ -4,11 +4,38 @@ let map;
 const showMap = (latitudSelect, longSelect) => {
    map = new GMaps({
     div: '#map',
-    zoom: 16,
+    zoom: 20,
     lat: latitudSelect,
     lng: longSelect
   })
 
+  GMaps.geolocate({
+  success: function(position) {
+    map.setCenter(position.coords.latitude, position.coords.longitude);
+    map.setZoom(13);
+      map.addMarker({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+        title: "Lima-Miraflores ",
+        click: function(e) {
+          alert('You clicked in this marker');
+        }
+      });
+      map.drawRoute({
+        origin: [position.coords.latitude, position.coords.longitude],
+        destination: [latitudSelect, longSelect],
+        travelMode: 'DRIVING',
+      });
+      map.addMarker({
+        lat: latitudSelect,
+        lng: longSelect,
+        title: latitudSelect ,
+        click: function(e) {
+          alert('stations');
+        }
+      });
+    },
+  });
 
 };
 
