@@ -11,17 +11,16 @@ const SearchItem = (data, update)  => {
 }
 
 
-
-
-const reRender = (result , getValue) => {
+const reRender = (getValue, result) => {
     result.empty();
     getValue.forEach( getStation => {
-        result.append(SearchItem(getStation, _ =>{reRender(result,getValue); }));
+        result.append(SearchItem(getStation, _ =>{reRender(getValue, result); }));
     })
 };
 
 
 const Search = () => {
+
     const search = $('<section id="search"></section>');
     const container = $('<div class="container"></div>');
     const input = $('<input type="text" placeholder="Ingresa tu distrito a buscar">');
@@ -32,11 +31,10 @@ const Search = () => {
     search.append(container);
     search.append(result);
 
-
     input.on('keyup', (e) => {
         if (input.val()) {
             const filterObt = filterByDistrict(state.stations, input.val());
-            reRender( result, filterObt);
+            reRender( filterObt, result);
         }
     })
     return search;
