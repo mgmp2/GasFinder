@@ -27,9 +27,15 @@ const searchItem = (station, update)  => {
 
 const reRender = (getValue, result, update) => {
     result.empty();
-    getValue.forEach( getStation => {
-        result.append(searchItem(getStation,update));
-    })
+    if(getValue.length > 0) {
+
+        getValue.forEach( getStation => {
+            result.append(searchItem(getStation,update));
+        })
+    } else {
+        const output = $('<p> No se encontró el destino a buscar...<p>');
+        result.append(output);
+    }
 };
 
 
