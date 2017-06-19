@@ -5,15 +5,19 @@
   box-sizing: border-box;
 }
 header {
+    color: #fff;
     background-color: #660000;
     padding-top: 14px;
 }
 h1 {
     color: #fff;
-    text-align: center;
+    display: inline-block;
+    margin-left: 14px;
+
 }
-.wrapper {
-    border: 1px solid #000;
+header .fa-chevron-left {
+    margin-left: 14px;
+    font-size: 21px;
 }
 /*SEARCH */
 

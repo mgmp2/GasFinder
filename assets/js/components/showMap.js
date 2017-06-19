@@ -7,7 +7,8 @@ const showMap = (latitudSelect, longSelect) => {
    map = new GMaps({
     div: '#map',
     lat: latitudSelect,
-    lng: longSelect
+    lng: longSelect,
+    zoom: 16
   })
 
   GMaps.geolocate({
