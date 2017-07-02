@@ -18,8 +18,6 @@ const searchItem = (station, update)  => {
         state.selectedStation = station;
         update();
         showMap(state.selectedStation.lat, state.selectedStation.long);
-
-
     })
     return item;
 }

@@ -28,8 +28,7 @@ const state = {
 
 $(_ => {
         getJSON('stations.json', (err, json) => {
-
-       if (err) { return alert(err.message);}
+            if (err) { return alert(err.message);}
        state.stations = json;
 
         const root = $('.root');

@@ -15,6 +15,10 @@ h1 {
 .wrapper {
     border: 1px solid #000;
 }
+hr {
+    width: 20px;
+    border: 2px solid black;
+}
 /*SEARCH */
 
 #search .box-input {
