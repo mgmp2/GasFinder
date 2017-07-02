@@ -10,7 +10,7 @@ const detailsStation = (update) => {
     const producto = $('<div class="product"></div>');
 
     state.selectedStation.products.forEach( (e,i) => {
-        const productItem = $('<span>'+state.selectedStation.products[i]+'</span>');
+        const productItem = $('<span class="product-'+state.selectedStation.products[i]+'">'+state.selectedStation.products[i]+'</span>');
         producto.append(productItem);
     } );
     box.append(mapa);
