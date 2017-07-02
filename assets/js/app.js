@@ -1,7 +1,7 @@
 'use strict';
 
-const render = (root) => {
-    root.empty();
+const render = (root) => { //Permite volver a pintar
+    root.empty();       //Primero vacia
     const wrapper = $('<div class="wrapper"></div>');
     //Append de componentes
     wrapper.append(Header( _ => {
@@ -35,5 +35,10 @@ $(_ => {
         render(root);
 
         });
+
+        if ($('.modal').attr("class") == "modal") {
+
+            $('.modal').modal('open');
+        }
 
 })
